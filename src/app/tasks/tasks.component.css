@@ -1,0 +1,92 @@
+#tasks ul {
+  list-style: none; /* Remove default bullet points */
+  margin: 0; /* Remove default margin */
+  padding: 1rem;
+  border-radius: 8px;
+  /* max-height: 80vh; */
+  background-color: #3a2c54;
+  /* --- Crucial for making it scrollable and then hiding the scrollbar --- */
+  max-height: 425px; /* IMPORTANT: Set a max-height to trigger overflow. Adjust this value as needed for your layout. */
+  overflow-y: auto; /* Enable vertical scrolling if content exceeds max-height */
+
+  /* --- HIDE SCROLLBARS --- */
+
+  /* For Webkit browsers (Chrome, Safari, Edge) */
+  &::-webkit-scrollbar {
+    display: none; /* Hides the scrollbar completely */
+    width: 0; /* Ensures no width is taken up */
+    height: 0; /* Ensures no height is taken up */
+  }
+
+  /* For Firefox */
+  scrollbar-width: none; /* Hides the scrollbar */
+
+  /* For Internet Explorer 10+ */
+  -ms-overflow-style: none; /* Hides the scrollbar */
+}
+
+/* Optional: Add some spacing between your individual app-task list items */
+#tasks ul li {
+  margin-bottom: 15px; /* Adjust as needed for spacing between tasks */
+}
+
+/* Ensure the last list item doesn't have extra bottom margin if not desired */
+#tasks ul li:last-child {
+  margin-bottom: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 0.9rem;
+  width: 60%;
+  text-wrap: balance;
+}
+
+menu {
+  margin: 0;
+  padding: 0;
+}
+
+menu button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #9965dd;
+  border-radius: 4px;
+  border: none;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.9rem;
+}
+
+menu button:hover,
+menu button:active {
+  background-color: #a565dd;
+}
+
+ul {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-height: 50vh;
+  overflow: auto;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  menu {
+    width: auto;
+  }
+}

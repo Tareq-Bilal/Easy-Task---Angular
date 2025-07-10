@@ -1,0 +1,95 @@
+/* Styles for the main container */
+main {
+  width: 100%;
+  max-width: 60rem;
+  margin: 2.5rem auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  gap: 2rem;
+}
+
+#users {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  overflow: auto;
+}
+
+app-tasks {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#fallback {
+  font-weight: bold;
+  font-size: 1.15rem;
+  margin: 0;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  main {
+    margin: 4rem auto;
+    grid-template-columns: 1fr 3fr;
+    gap: 2rem;
+  }
+
+  #users {
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  app-tasks {
+    align-self: start;
+  }
+
+  #fallback {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+}
+
+.user-item {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+}
+
+.user-item:hover {
+  background-color: #f0f0f0;
+}
+
+.user-item button {
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+}
+
+.user-item img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+  border: 2px solid #a8dadc;
+}
+
+.user-item span {
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}

@@ -1,0 +1,24 @@
+@if(isAddingNewTask){
+<app-new-task (cancel)="onCancelAddTask()"></app-new-task>
+}
+<section id="tasks">
+  <ul>
+    <header>
+      <h2>{{ userName }}</h2>
+      <menu>
+        <button (click)="onStartAddNewTask()">Add Task</button>
+      </menu>
+    </header>
+    @if ( getUserTasks().length > 0) { @for (task of getUserTasks(); track
+    $index){
+    <li>
+      <app-task
+        [task]="task"
+        (complete)="handleCompleteTask($event)"
+      ></app-task>
+    </li>
+    } } @else {
+    <h3>No Tasks</h3>
+    }
+  </ul>
+</section>

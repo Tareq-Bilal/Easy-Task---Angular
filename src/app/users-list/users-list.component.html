@@ -1,0 +1,21 @@
+<main>
+  <ul id="users">
+    @for (user of getUsers(); track user.id) {
+    <li>
+      <app-user
+        [user]="user"
+        (userClicked)="handleUserSelect($event)"
+        [isActive]="user.id === selectedUser?.id"
+      />
+    </li>
+    }
+  </ul>
+  @if (!selectedUser) {
+  <app-tasks
+    [userName]="'Select a user to see their task'"
+    [userId]="''"
+  ></app-tasks>
+  } @else {
+  <app-tasks [userName]="getUserName()" [userId]="selectedUser.id"></app-tasks>
+  }
+</main>

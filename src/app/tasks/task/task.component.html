@@ -1,0 +1,8 @@
+<article>
+  <h3>{{ task?.title }}</h3>
+  <time datetime="">{{ task?.duDate?.toDateString() }}</time>
+  <p>{{ task?.summary }}</p>
+  <p class="actions">
+    <button (click)="completeTask()">Complete</button>
+  </p>
+</article>
